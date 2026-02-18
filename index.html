@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Clinical Rotations Command Center — Notion Template for MS3/MS4</title>
+<meta name="description" content="Your entire clinical year in one Notion workspace. 7 databases, 43 pimping questions, 50+ procedures, shelf exam planners, and ERAS prep. Built by a med student in the trenches.">
+<meta property="og:title" content="Clinical Rotations Command Center — Notion Template">
+<meta property="og:description" content="Stop juggling 15 spreadsheets. One Notion workspace for rotations, shelf exams, patient logs, procedures, evaluations, and residency prep.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:#1a1a2e;line-height:1.6;background:#fff}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{padding:80px 0 60px;text-align:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto}
+.hero .subtitle{font-size:clamp(16px,2.5vw,20px);opacity:.9;max-width:560px;margin:0 auto 32px}
+.hero .cta-btn{display:inline-block;background:#fff;color:#764ba2;font-size:18px;font-weight:700;padding:16px 40px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.hero .price{margin-top:16px;font-size:14px;opacity:.8}
+
+/* Social Proof */
+.proof{background:#f8f7ff;padding:40px 0;text-align:center;border-bottom:1px solid #eee}
+.proof-items{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.proof-item{font-size:14px;font-weight:500;color:#555}
+.proof-item strong{color:#764ba2;font-size:22px;display:block;margin-bottom:2px}
+
+/* Problem Section */
+.problem{padding:60px 0;background:#fff}
+.problem h2{font-size:28px;font-weight:800;text-align:center;margin-bottom:12px}
+.problem .lead{text-align:center;color:#666;max-width:600px;margin:0 auto 32px;font-size:17px}
+.pain-list{list-style:none;max-width:600px;margin:0 auto}
+.pain-list li{padding:12px 0;padding-left:32px;position:relative;font-size:16px;color:#444}
+.pain-list li::before{content:"😤";position:absolute;left:0;top:12px}
+
+/* Features Grid */
+.features{padding:60px 0;background:#f8f9ff}
+.features h2{font-size:28px;font-weight:800;text-align:center;margin-bottom:40px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.feat-card{background:#fff;border-radius:12px;padding:28px;border:1px solid #e8e8f0;transition:box-shadow .2s}
+.feat-card:hover{box-shadow:0 4px 20px rgba(102,126,234,.12)}
+.feat-card .icon{font-size:28px;margin-bottom:12px}
+.feat-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.feat-card p{color:#555;font-size:14px;line-height:1.6}
+.feat-card .highlight{color:#764ba2;font-weight:600}
+
+/* Pimping Section */
+.pimping{padding:60px 0;background:#fff}
+.pimping h2{font-size:28px;font-weight:800;text-align:center;margin-bottom:12px}
+.pimping .lead{text-align:center;color:#666;max-width:600px;margin:0 auto 32px}
+.q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;max-width:750px;margin:0 auto}
+.q-card{background:#f8f7ff;border-radius:10px;padding:20px;border-left:4px solid #764ba2}
+.q-card .rotation{font-size:12px;font-weight:600;color:#764ba2;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.q-card .question{font-size:15px;font-weight:600;color:#1a1a2e}
+
+/* DO Section */
+.do-friendly{padding:48px 0;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);text-align:center}
+.do-friendly h2{font-size:24px;font-weight:800;margin-bottom:12px}
+.do-friendly p{color:#2e7d32;max-width:560px;margin:0 auto;font-size:16px}
+
+/* What You Get */
+.summary{padding:60px 0;background:#fff}
+.summary h2{font-size:28px;font-weight:800;text-align:center;margin-bottom:32px}
+.sum-list{max-width:600px;margin:0 auto;list-style:none}
+.sum-list li{padding:10px 0;padding-left:36px;position:relative;font-size:16px}
+.sum-list li::before{content:"✅";position:absolute;left:0;top:10px}
+
+/* CTA */
+.final-cta{padding:60px 0;text-align:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff}
+.final-cta h2{font-size:32px;font-weight:800;margin-bottom:16px}
+.final-cta p{opacity:.9;margin-bottom:28px;font-size:17px}
+.final-cta .cta-btn{display:inline-block;background:#fff;color:#764ba2;font-size:18px;font-weight:700;padding:16px 40px;border-radius:10px;text-decoration:none;transition:transform .15s}
+.final-cta .cta-btn:hover{transform:translateY(-2px)}
+.final-cta .guarantee{margin-top:20px;font-size:14px;opacity:.75}
+
+/* FAQ */
+.faq{padding:60px 0;background:#f8f9ff}
+.faq h2{font-size:28px;font-weight:800;text-align:center;margin-bottom:32px}
+.faq-item{max-width:640px;margin:0 auto 20px;background:#fff;border-radius:10px;padding:20px 24px;border:1px solid #e8e8f0}
+.faq-item h3{font-size:16px;font-weight:700;margin-bottom:8px;cursor:pointer}
+.faq-item p{color:#555;font-size:14px}
+
+footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#fff}
+
+@media(max-width:600px){
+  .hero{padding:48px 0 40px}
+  .proof-items{gap:20px}
+  .feat-grid,.q-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">🩺 BUILT BY A MED STUDENT IN THE TRENCHES</div>
+    <h1>Your Entire Clinical Year.<br>One Notion Workspace.</h1>
+    <p class="subtitle">Stop drowning in spreadsheets. The Clinical Rotations Command Center organizes your rotations, shelf exams, patients, procedures, evals, and residency prep — so you can focus on learning medicine.</p>
+    <a href="#GUMROAD_LINK" class="cta-btn">Get the Template — $12</a>
+    <p class="price">Pay what you want (minimum $9) · 30-day money-back guarantee</p>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container">
+    <div class="proof-items">
+      <div class="proof-item"><strong>7</strong>Interconnected Databases</div>
+      <div class="proof-item"><strong>43</strong>Pimping Questions + Answers</div>
+      <div class="proof-item"><strong>50+</strong>Procedures Pre-Loaded</div>
+      <div class="proof-item"><strong>5</strong>Dashboard Pages</div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="container">
+    <h2>Sound familiar?</h2>
+    <p class="lead">Clinical rotations are chaos. You're managing a dozen systems that don't talk to each other.</p>
+    <ul class="pain-list">
+      <li>Google Sheet for patients, separate doc for procedures, sticky notes for eval reminders</li>
+      <li>47 browser tabs of study resources you'll "get to later"</li>
+      <li>Can't remember if you requested that attending's evaluation 3 weeks ago</li>
+      <li>Shelf exam in 8 days and you're not sure what you've actually covered</li>
+      <li>Pimped on rounds and drawing a blank on the Charcot triad (again)</li>
+      <li>No clue where you stand on procedure requirements until the last week</li>
+    </ul>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>Everything You Need. Already Built.</h2>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="icon">📋</div>
+        <h3>Rotation Tracker</h3>
+        <p>All 8 core rotations pre-loaded. Timeline view, calendar view, <span class="highlight">shelf exam countdown</span> built in. Track dates, sites, preceptors, and grades.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">🩺</div>
+        <h3>Patient Log</h3>
+        <p>HIPAA-safe encounter tracking. Log complaints, diagnoses, procedures, and learning points. <span class="highlight">5 example cases included</span> so you know exactly how to use it.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">📚</div>
+        <h3>Shelf Exam Study Planner</h3>
+        <p>Resource tracking for UWorld, AMBOSS, OnlineMedEd, Divine Intervention, and more. <span class="highlight">Pre-filled recommendations per shelf.</span></p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">🔧</div>
+        <h3>Procedure Log</h3>
+        <p><span class="highlight">50+ procedures pre-loaded by rotation.</span> Track your role, confidence level (1-5), and repetitions. See your growth over time.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">⭐</div>
+        <h3>Evaluation Tracker</h3>
+        <p>Board view: Not Requested → Submitted → Received. <span class="highlight">Never lose track of who owes you an eval.</span> MSPE and letter writer flags built in.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">🧠</div>
+        <h3>Pimping Prep</h3>
+        <p><span class="highlight">43 high-yield questions with answers</span> across all rotations. Flashcard-style gallery view. Never get caught off guard on rounds.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">🎯</div>
+        <h3>Residency Prep Hub</h3>
+        <p>Complete ERAS timeline, letter writer tracker, personal statement template, and program list database. <span class="highlight">Start early, stay organized.</span></p>
+      </div>
+      <div class="feat-card">
+        <div class="icon">📝</div>
+        <h3>Daily Reflections</h3>
+        <p>Structured journal with prompts for wins, challenges, and learning points. Calendar view shows your journey. <span class="highlight">Self-care check-ins</span> because burnout is real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pimping">
+  <div class="container">
+    <h2>Never Get Pimped Unprepared Again</h2>
+    <p class="lead">43 high-yield questions with detailed answers. Review before rounds. Look smart. Repeat.</p>
+    <div class="q-grid">
+      <div class="q-card">
+        <div class="rotation">Surgery</div>
+        <div class="question">What are the components of Charcot's triad and Reynolds' pentad?</div>
+      </div>
+      <div class="q-card">
+        <div class="rotation">Internal Medicine</div>
+        <div class="question">A patient with CHF is on max medical therapy. What's your next step?</div>
+      </div>
+      <div class="q-card">
+        <div class="rotation">Pediatrics</div>
+        <div class="question">Name the developmental milestones for a 9-month-old.</div>
+      </div>
+      <div class="q-card">
+        <div class="rotation">OB/GYN</div>
+        <div class="question">Shoulder dystocia — walk me through your maneuvers in order.</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;color:#999;font-size:14px">+ 39 more across all rotations</p>
+  </div>
+</section>
+
+<section class="do-friendly">
+  <div class="container">
+    <h2>🦴 DO Students: We Didn't Forget You</h2>
+    <p>COMLEX Level 2 focus areas included for every shelf. OMM integration points flagged. Savarese referenced. Because most templates pretend DO students don't exist.</p>
+  </div>
+</section>
+
+<section class="summary">
+  <div class="container">
+    <h2>Everything You Get</h2>
+    <ul class="sum-list">
+      <li>7 interconnected Notion databases (pre-filled, not empty)</li>
+      <li>43 pimping questions with detailed answers</li>
+      <li>50+ procedures pre-loaded by rotation</li>
+      <li>8 rotation entries with shelf exam countdowns</li>
+      <li>5 example patient cases</li>
+      <li>Daily schedule templates for every rotation</li>
+      <li>Complete ERAS timeline and letter tracker</li>
+      <li>Resource library with rotation-specific study guides</li>
+      <li>Weekly review template for self-assessment</li>
+      <li>COMLEX Level 2 focus areas (DO-friendly)</li>
+      <li>Lifetime access + free updates</li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <h3>Do I need Notion paid plan?</h3>
+      <p>Nope. The free plan works perfectly. Notion's free tier includes unlimited pages and databases. You only need paid if you want unlimited file uploads or team features.</p>
+    </div>
+    <div class="faq-item">
+      <h3>I'm an MD student, not DO. Is this still useful?</h3>
+      <p>Absolutely. 95% of the template is universal. The COMLEX content is clearly labeled as bonus sections — they don't clutter anything for MD students.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I customize it?</h3>
+      <p>That's the whole point of Notion. Add properties, change views, delete what you don't need. It's your workspace — the template just gives you a massive head start.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the patient log actually HIPAA-safe?</h3>
+      <p>The template includes a HIPAA disclaimer and is designed for educational tracking — no fields for real patient names, MRNs, or DOBs. Use case-style descriptions only. But ultimately, HIPAA compliance is your responsibility.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if I don't like it?</h3>
+      <p>30-day money-back guarantee. Email me and I'll refund you, no questions asked.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Stop Winging Clinical Year</h2>
+    <p>You've got enough to worry about. Let the template handle the organization.</p>
+    <a href="#GUMROAD_LINK" class="cta-btn">Get the Template — $12</a>
+    <p class="guarantee">🔒 30-day money-back guarantee · Pay what you want (min $9) · Instant access</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Built with ☕ and clinical-year stress. Questions? <a href="mailto:#CONTACT_EMAIL" style="color:#764ba2">Email me</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
