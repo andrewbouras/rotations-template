@@ -132,21 +132,16 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
   <div class="container">
     <h2>🚀 Launching Soon — Get Early Access</h2>
     <p>Drop your email and I'll send you the link the moment it goes live. No spam. One email.</p>
-    <!-- Email capture: replace FORMSPREE_ID with your Formspree form ID (see PRE-LAUNCH-REDDIT-STRATEGY.md) -->
+    <!-- Waitlist: mailto fallback ensures zero leads are lost -->
     <form
-      action="https://formspree.io/f/xpwzpble"
-      method="POST"
       class="email-form"
       id="waitlistForm"
       onsubmit="handleSubmit(event)"
     >
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <input type="hidden" name="_subject" value="Rotations Template Waitlist Signup">
-      <input type="hidden" name="_replyto" value="bandrew9@vt.edu">
-      <input type="hidden" name="source" value="landing-page-waitlist">
+      <input type="email" id="waitlistEmail" placeholder="your@email.com" required>
       <button type="submit">Notify Me →</button>
     </form>
-    <div class="form-success" id="formSuccess">✅ You're on the list! I'll email you at launch.</div>
+    <div class="form-success" id="formSuccess" style="display:none">✅ Opening your email app — just hit Send! I'll add you to the list.</div>
     <p class="fine">No spam. Unsubscribe anytime.</p>
   </div>
 </section>
@@ -329,27 +324,22 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
 <script>
 function handleSubmit(e) {
   e.preventDefault();
+  const email = document.getElementById('waitlistEmail').value.trim();
   const form = document.getElementById('waitlistForm');
   const success = document.getElementById('formSuccess');
-  const data = new FormData(form);
   
-  fetch(form.action, {
-    method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      form.style.display = 'none';
-      success.style.display = 'block';
-    } else {
-      // Fallback: show success anyway (Formspree may need setup)
-      form.style.display = 'none';
-      success.style.display = 'block';
-    }
-  }).catch(() => {
-    form.style.display = 'none';
-    success.style.display = 'block';
-  });
+  if (!email) return;
+  
+  // Open mailto so lead is never lost — email client does the work
+  const subject = encodeURIComponent('Add me to the waitlist — Rotations Template');
+  const body = encodeURIComponent(
+    'Hi Andrew,\n\nPlease add me to the waitlist for the Clinical Rotations Command Center Notion template!\n\nMy email: ' + email + '\n\n(Sent from the landing page waitlist form)'
+  );
+  window.location.href = 'mailto:bandrew9@vt.edu?subject=' + subject + '&body=' + body;
+  
+  // Show confirmation
+  form.style.display = 'none';
+  success.style.display = 'block';
 }
 
 // Smooth scroll for anchor links
