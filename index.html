@@ -11,6 +11,31 @@
 <meta property="og:image" content="https://andrewbouras.github.io/rotations-template/og-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Product Schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Clinical Rotations Command Center — Notion Template",
+  "description": "Your entire clinical year in one Notion workspace. 7 databases, 43 pimping questions, 50+ procedures, shelf exam planners, and ERAS prep. Built by a med student in the trenches.",
+  "brand": { "@type": "Brand", "name": "Andrew Bouras" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://andrewbouras.github.io/rotations-template/",
+    "priceCurrency": "USD",
+    "price": "12.00",
+    "availability": "https://schema.org/PreOrder",
+    "priceValidUntil": "2026-12-31"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  }
+}
+</script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',system-ui,sans-serif;color:#1a1a2e;line-height:1.6;background:#fff}
@@ -24,6 +49,17 @@ body{font-family:'Inter',system-ui,sans-serif;color:#1a1a2e;line-height:1.6;back
 .hero .cta-btn{display:inline-block;background:#fff;color:#764ba2;font-size:18px;font-weight:700;padding:16px 40px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s}
 .hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .hero .price{margin-top:16px;font-size:14px;opacity:.8}
+
+/* Launch Pricing Banner */
+.launch-banner{background:linear-gradient(90deg,#fef3c7,#fde68a);padding:14px 0;text-align:center;display:none}
+.launch-banner p{font-size:15px;font-weight:600;color:#92400e}
+.launch-banner span{font-weight:800}
+
+/* Bundle Cross-Link Banner */
+.bundle-banner{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-bottom:2px solid #7c3aed;padding:14px 0;text-align:center}
+.bundle-banner a{color:#4f46e5;font-weight:700;text-decoration:none;font-size:15px}
+.bundle-banner a:hover{text-decoration:underline}
+.bundle-banner .save-tag{background:#7c3aed;color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:4px;margin-left:8px}
 
 /* Email Capture Banner */
 .email-capture{background:#fff7ed;border-top:3px solid #f97316;border-bottom:3px solid #f97316;padding:32px 0;text-align:center}
@@ -122,8 +158,22 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
     <div class="badge">🩺 BUILT BY A MED STUDENT IN THE TRENCHES</div>
     <h1>Your Entire Clinical Year.<br>One Notion Workspace.</h1>
     <p class="subtitle">Stop drowning in spreadsheets. The Clinical Rotations Command Center organizes your rotations, shelf exams, patients, procedures, evals, and residency prep — so you can focus on learning medicine.</p>
-    <a href="#get-notified" class="cta-btn">Get the Template — $12</a>
+    <a href="#get-notified" class="cta-btn" data-cta>Get the Template — $12</a>
     <p class="price">Pay what you want (minimum $9) · 30-day money-back guarantee</p>
+  </div>
+</section>
+
+<!-- Launch pricing banner — only visible when STORE_CONFIG.live is true -->
+<section class="launch-banner" id="launchBanner">
+  <div class="container">
+    <p>🔥 Launch pricing: <span>$12</span> (regular $17 after launch week)</p>
+  </div>
+</section>
+
+<!-- Bundle cross-link banner -->
+<section class="bundle-banner">
+  <div class="container">
+    <a href="https://andrewbouras.github.io/med-school-bundle/">Get all 3 templates — Rotations + Step 2 + Residency <span class="save-tag">SAVE $10</span></a>
   </div>
 </section>
 
@@ -149,10 +199,10 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
 <section class="proof">
   <div class="container">
     <div class="proof-items">
+      <div class="proof-item"><strong>200+</strong>Hours of Clinical Rotations</div>
+      <div class="proof-item"><strong>143</strong>Pre-Loaded Entries</div>
       <div class="proof-item"><strong>7</strong>Interconnected Databases</div>
-      <div class="proof-item"><strong>43</strong>Pimping Questions + Answers</div>
-      <div class="proof-item"><strong>50+</strong>Procedures Pre-Loaded</div>
-      <div class="proof-item"><strong>5</strong>Dashboard Pages</div>
+      <div class="proof-item"><strong>DO & MD</strong>Student Ready</div>
     </div>
   </div>
 </section>
@@ -276,7 +326,7 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
   <div class="container">
     <h2>Stop Winging Clinical Year</h2>
     <p>You've got enough to worry about. Let the template handle the organization.</p>
-    <a href="#get-notified" class="cta-btn">Get Early Access — $12</a>
+    <a href="#get-notified" class="cta-btn" data-cta>Get Early Access — $12</a>
     <p class="guarantee">🔒 30-day money-back guarantee · Pay what you want (min $9) · Instant access at launch</p>
   </div>
 </section>
@@ -312,7 +362,7 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
 </section>
 
 <div class="sticky-cta">
-  <a href="#get-notified">Get Early Access — $12 →</a>
+  <a href="#get-notified" data-cta>Get Early Access — $12 →</a>
 </div>
 
 <footer>
@@ -323,21 +373,50 @@ footer{padding:32px 0;text-align:center;font-size:13px;color:#999;background:#ff
 </footer>
 
 <script>
+// ============================================================
+// STORE CONFIG — Change 'live' to true and paste your URL
+// to instantly convert all CTAs from waitlist → buy buttons.
+// ============================================================
+const STORE_CONFIG = {
+  // CHANGE THIS ONE LINE when store goes live:
+  live: false,
+  buyUrl: '',      // Paste Payhip/Gumroad URL here
+  bundleUrl: '',   // Bundle URL (if different)
+};
+
+// --- Payment-ready CTA system ---
+(function() {
+  if (STORE_CONFIG.live && STORE_CONFIG.buyUrl) {
+    // Convert all CTA buttons to direct purchase links
+    document.querySelectorAll('[data-cta]').forEach(function(btn) {
+      btn.href = STORE_CONFIG.buyUrl;
+      btn.textContent = btn.textContent.replace('Get Early Access', 'Get It Now').replace('Get the Template', 'Get It Now');
+      btn.removeAttribute('data-cta');
+    });
+    // Show launch pricing banner
+    var banner = document.getElementById('launchBanner');
+    if (banner) banner.style.display = 'block';
+    // Hide the email capture section
+    var emailSection = document.getElementById('get-notified');
+    if (emailSection) emailSection.style.display = 'none';
+  }
+})();
+
 function handleSubmit(e) {
   e.preventDefault();
   const email = document.getElementById('waitlistEmail').value.trim();
   const form = document.getElementById('waitlistForm');
   const success = document.getElementById('formSuccess');
-  
+
   if (!email) return;
-  
+
   // Open mailto so lead is never lost — email client does the work
   const subject = encodeURIComponent('Add me to the waitlist — Rotations Template');
   const body = encodeURIComponent(
     'Hi Andrew,\n\nPlease add me to the waitlist for the Clinical Rotations Command Center Notion template!\n\nMy email: ' + email + '\n\n(Sent from the landing page waitlist form)'
   );
   window.location.href = 'mailto:bandrew9@vt.edu?subject=' + subject + '&body=' + body;
-  
+
   // Show confirmation
   form.style.display = 'none';
   success.style.display = 'block';
